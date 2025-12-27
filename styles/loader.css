@@ -1,0 +1,205 @@
+/* ============================================
+   LOADER STYLES - K8s Cluster Initialization
+   ============================================ */
+
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-loader);
+    background: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader-container {
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+}
+
+.loader-header {
+    margin-bottom: var(--space-2xl);
+}
+
+.loader-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-md);
+    animation: float 2s ease-in-out infinite;
+}
+
+.loader-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 2px;
+}
+
+/* Progress Bar */
+.loader-progress {
+    margin-bottom: var(--space-2xl);
+}
+
+.progress-bar {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    margin-bottom: var(--space-sm);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-cyan-glow);
+}
+
+.progress-text {
+    font-family: var(--font-mono);
+    font-size: var(--text-lg);
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+/* Loader Terminal */
+.loader-terminal {
+    background: var(--bg-terminal);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.loader-terminal .terminal-header {
+    padding: var(--space-sm) var(--space-md);
+}
+
+.loader-terminal .terminal-body {
+    padding: var(--space-lg);
+    min-height: 180px;
+    font-size: var(--text-sm);
+}
+
+.loader-terminal .terminal-line.prompt {
+    color: var(--accent-cyan);
+    margin-bottom: var(--space-md);
+}
+
+.loader-terminal .terminal-output {
+    line-height: 1.8;
+}
+
+.kubectl-line {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-xs) 0;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.3s ease forwards;
+}
+
+.kubectl-line.header {
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--space-sm);
+    margin-bottom: var(--space-sm);
+}
+
+.kubectl-line .pod-name {
+    width: 120px;
+    color: var(--text-primary);
+}
+
+.kubectl-line .pod-ready {
+    width: 50px;
+    color: var(--text-secondary);
+}
+
+.kubectl-line .pod-status {
+    width: 130px;
+}
+
+.kubectl-line .pod-status.running {
+    color: var(--accent-green);
+}
+
+.kubectl-line .pod-status.pending {
+    color: var(--accent-yellow);
+}
+
+.kubectl-line .pod-status.creating {
+    color: var(--accent-orange);
+}
+
+.kubectl-line .pod-restarts {
+    color: var(--text-muted);
+}
+
+/* Loader Hint */
+.loader-hint {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+/* Skip Button */
+.skip-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: var(--space-sm) var(--space-lg);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.skip-btn:hover {
+    border-color: var(--accent-cyan);
+    color: var(--accent-cyan);
+}
+
+/* Typing cursor for loader */
+.typing-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 16px;
+    background: var(--accent-green);
+    margin-left: 2px;
+    animation: blink 1s infinite;
+}
+
+/* Loading dots animation */
+@keyframes loadingDots {
+
+    0%,
+    20% {
+        content: '.';
+    }
+
+    40% {
+        content: '..';
+    }
+
+    60%,
+    100% {
+        content: '...';
+    }
+}

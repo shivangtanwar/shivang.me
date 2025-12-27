@@ -1,0 +1,214 @@
+{
+    "personal": {
+        "name": "Shivang Tanwar",
+        "title": "DevOps Engineer",
+        "tagline": "Building bridges between Dev and Ops 🌉",
+        "email": "shivang@example.com",
+        "phone": "+91 XXXXXXXXXX",
+        "location": "India",
+        "github": "https://github.com/shivang",
+        "linkedin": "https://linkedin.com/in/shivang",
+        "twitter": "https://twitter.com/shivang",
+        "website": "https://shivangtanwar.me"
+    },
+    "about": {
+        "intro": "A passionate DevOps engineer who loves automating everything and building reliable, scalable infrastructure.",
+        "description": "Currently pursuing B.Tech in Computer Science & Engineering (5th semester), I'm on a mission to master the DevOps ecosystem and land an amazing role where I can containerize problems and orchestrate solutions!",
+        "goal": "Master DevOps & contribute to building world-class infrastructure"
+    },
+    "skills": {
+        "expert": [
+            {
+                "name": "Docker",
+                "icon": "🐳",
+                "level": 5,
+                "experience": "3 years"
+            },
+            {
+                "name": "Linux",
+                "icon": "🐧",
+                "level": 5,
+                "experience": "4 years"
+            },
+            {
+                "name": "Git",
+                "icon": "🔧",
+                "level": 5,
+                "experience": "3 years"
+            },
+            {
+                "name": "Bash",
+                "icon": "📜",
+                "level": 5,
+                "experience": "4 years"
+            },
+            {
+                "name": "Automation",
+                "icon": "⚙️",
+                "level": 5,
+                "experience": "3 years"
+            }
+        ],
+        "advanced": [
+            {
+                "name": "Kubernetes",
+                "icon": "☸️",
+                "level": 4,
+                "experience": "1 year"
+            },
+            {
+                "name": "Nginx",
+                "icon": "🌐",
+                "level": 4,
+                "experience": "2 years"
+            },
+            {
+                "name": "Monitoring",
+                "icon": "📊",
+                "level": 4,
+                "experience": "1 year"
+            },
+            {
+                "name": "Networking",
+                "icon": "🔗",
+                "level": 4,
+                "experience": "2 years"
+            }
+        ],
+        "proficient": [
+            {
+                "name": "CI/CD",
+                "icon": "🔄",
+                "level": 3,
+                "experience": "1 year"
+            },
+            {
+                "name": "Cloud",
+                "icon": "☁️",
+                "level": 3,
+                "experience": "1 year"
+            },
+            {
+                "name": "YAML",
+                "icon": "📄",
+                "level": 3,
+                "experience": "2 years"
+            }
+        ],
+        "learning": [
+            {
+                "name": "Terraform",
+                "icon": "🏗️",
+                "level": 2,
+                "experience": "Learning"
+            },
+            {
+                "name": "IaC",
+                "icon": "📝",
+                "level": 1,
+                "experience": "Learning"
+            },
+            {
+                "name": "SRE",
+                "icon": "🔧",
+                "level": 1,
+                "experience": "Learning"
+            }
+        ]
+    },
+    "projects": [
+        {
+            "name": "DevOps Dashboard",
+            "version": "v2.1.0",
+            "description": "A real-time monitoring dashboard for tracking server health, deployments, and system metrics. Features live updates, alerting, and beautiful visualizations.",
+            "tech": [
+                "Docker",
+                "Kubernetes",
+                "Python",
+                "Grafana",
+                "Redis"
+            ],
+            "github": "https://github.com/shivang/devops-dashboard",
+            "demo": "#",
+            "image": null,
+            "featured": true,
+            "status": "Running",
+            "uptime": "45 days"
+        },
+        {
+            "name": "CI/CD Pipeline Generator",
+            "version": "v1.5.0",
+            "description": "Automated pipeline generator that creates GitHub Actions, GitLab CI, or Jenkins pipelines from simple YAML configs.",
+            "tech": [
+                "Node.js",
+                "YAML",
+                "GitHub Actions"
+            ],
+            "github": "https://github.com/shivang/cicd-generator",
+            "demo": "#",
+            "image": null,
+            "featured": false,
+            "status": "Running",
+            "uptime": "30 days"
+        },
+        {
+            "name": "K8s Cluster Manager",
+            "version": "v1.0.0",
+            "description": "Web-based Kubernetes cluster management tool with visual pod monitoring and easy deployment management.",
+            "tech": [
+                "Kubernetes",
+                "React",
+                "Go"
+            ],
+            "github": "https://github.com/shivang/k8s-manager",
+            "demo": "#",
+            "image": null,
+            "featured": false,
+            "status": "Running",
+            "uptime": "15 days"
+        }
+    ],
+    "experience": [
+        {
+            "role": "DevOps Engineer Intern",
+            "company": "TechCorp Inc.",
+            "duration": "Jan 2026 - Present",
+            "year": 2026,
+            "location": "Remote",
+            "highlights": [
+                "Managed CI/CD pipelines for 20+ microservices",
+                "Reduced deployment time by 60% using GitOps",
+                "Implemented monitoring with Prometheus + Grafana"
+            ],
+            "tech": [
+                "Docker",
+                "Kubernetes",
+                "ArgoCD",
+                "Terraform"
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Bachelor of Technology (B.Tech)",
+            "field": "Computer Science & Engineering",
+            "institution": "University Name",
+            "duration": "2022 - 2026 (Expected)",
+            "cgpa": "X.XX / 10",
+            "coursework": [
+                "Operating Systems",
+                "Computer Networks",
+                "Database Systems",
+                "Cloud Computing"
+            ],
+            "primary": true
+        },
+        {
+            "degree": "Higher Secondary (Class XII)",
+            "institution": "School Name",
+            "duration": "2022",
+            "score": "XX%",
+            "primary": false
+        }
+    ]
+}

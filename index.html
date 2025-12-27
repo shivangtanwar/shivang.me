@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Shivang Tanwar - Cloud DevOps Engineer (AWS, GCP) | CI/CD, Kubernetes, Automation. I help tech startups automate cloud deployments and build reliable DevOps pipelines.">
+  <meta name="keywords"
+    content="DevOps, Shivang Tanwar, Portfolio, Kubernetes, Docker, CI/CD, AWS, GCP, Cloud Engineer, Terraform, Jenkins">
+  <meta name="author" content="Shivang Tanwar">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Shivang Tanwar | DevOps Engineer">
+  <meta property="og:description" content="Building bridges between Dev and Ops">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shivangtanwar.me">
+
+  <title>Shivang Tanwar | DevOps Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="/styles/index.css">
+  <link rel="stylesheet" href="/styles/loader.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/terminal.css">
+  <link rel="stylesheet" href="/styles/sections.css">
+  <link rel="stylesheet" href="/styles/responsive.css">
+</head>
+
+<body>
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-container">
+      <div class="loader-header">
+        <span class="loader-icon">🚀</span>
+        <h1 class="loader-title">LAUNCHING PORTFOLIO</h1>
+      </div>
+
+      <div class="loader-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-text" id="progress-text">0%</span>
+      </div>
+
+      <div class="loader-terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">kubectl get pods -n portfolio</span>
+        </div>
+        <div class="terminal-body" id="loader-terminal-body">
+          <div class="terminal-line prompt" id="kubectl-command"></div>
+          <div class="terminal-output" id="kubectl-output"></div>
+        </div>
+      </div>
+
+      <p class="loader-hint">✨ All services will be ready shortly!</p>
+      <button class="skip-btn" id="skip-loader">Skip →</button>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" class="main-content hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+      <div class="nav-container">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-icon">⎈</span>
+          <span class="logo-text">SHIVANG</span>
+        </a>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#hero" class="nav-link active" data-section="hero">
+            <span class="nav-icon">🏠</span>
+            <span>Home</span>
+          </a>
+          <a href="#about" class="nav-link" data-section="about">
+            <span class="nav-icon">👤</span>
+            <span>About</span>
+          </a>
+          <a href="#skills" class="nav-link" data-section="skills">
+            <span class="nav-icon">💡</span>
+            <span>Skills</span>
+          </a>
+          <a href="#projects" class="nav-link" data-section="projects">
+            <span class="nav-icon">💼</span>
+            <span>Projects</span>
+          </a>
+          <a href="#experience" class="nav-link" data-section="experience">
+            <span class="nav-icon">📋</span>
+            <span>Experience</span>
+          </a>
+          <a href="#education" class="nav-link" data-section="education">
+            <span class="nav-icon">🎓</span>
+            <span>Education</span>
+          </a>
+          <a href="#contact" class="nav-link" data-section="contact">
+            <span class="nav-icon">📧</span>
+            <span>Contact</span>
+          </a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+            <span class="theme-icon">☾</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
+            <span class="hamburger"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-background" id="hero-bg"></div>
+      <div class="hero-content">
+        <div class="hero-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">visitor@shivang.dev</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">visitor@shivang.dev:~$</span>
+              <span class="command" id="hero-command"></span>
+              <span class="cursor" id="hero-cursor">█</span>
+            </div>
+            <div class="hero-output" id="hero-output">
+              <div class="hero-card">
+                <h1 class="hero-name glitch" id="hero-name" data-text="SHIVANG TANWAR"></h1>
+                <p class="hero-title" id="hero-title"></p>
+                <p class="hero-tagline" id="hero-tagline"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-cta">
+          <a href="/assets/documents/SHIVANG_CV.pdf" class="btn btn-primary" target="_blank">
+            <span>📄</span> View Resume
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>📧</span> Contact Me
+          </a>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://github.com/shivangtanwar" class="social-link" target="_blank" rel="noopener"
+            aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/shivangtanwar" class="social-link" target="_blank" rel="noopener"
+            aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
+          </a>
+          <a href="https://www.upwork.com/freelancers/shivangtanwar" class="social-link" target="_blank" rel="noopener"
+            aria-label="Upwork">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="scroll-indicator">
+          <span>↓ Scroll to explore</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">👤</span>
+            ABOUT ME
+          </h2>
+          <span class="section-command">cat about.md</span>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-wrapper">
+            <div class="image-frame">
+              <img src="/assets/images/me.jpg" alt="Shivang Tanwar" class="about-image">
+              <div class="image-overlay"></div>
+            </div>
+
+            <div class="neofetch-card">
+              <pre class="neofetch-output">
+<span class="nf-title">shivang@portfolio</span>
+<span class="nf-separator">─────────────────</span>
+<span class="nf-label">OS:</span> Linux (DevOps Mode)
+<span class="nf-label">Role:</span> DevOps Engineer
+<span class="nf-label">Shell:</span> bash/zsh
+<span class="nf-label">Editor:</span> Vim + VS Code
+<span class="nf-label">Theme:</span> Dark Mode 🌙
+<span class="nf-label">Status:</span> <span class="status-available">Available for hire</span>
+              </pre>
+            </div>
+          </div>
+
+          <div class="about-content">
+            <p class="about-intro">Hi! I'm <strong>Shivang</strong> 👋</p>
+            <p class="about-text">
+              I help tech startups & businesses automate cloud deployments and build reliable
+              DevOps pipelines that reduce downtime and accelerate releases. With my DevOps solutions,
+              you get CI/CD pipelines that deploy quickly and reliably, and automated infrastructure
+              with Terraform & CloudFormation.
+            </p>
+            <p class="about-text">
+              Currently pursuing <strong>B.Tech in Computer Science</strong> at <strong>BMU</strong>
+              (2023-2027), I specialize in containerization, Kubernetes orchestration, and cloud
+              automation across AWS, GCP, and Azure.
+            </p>
+            <p class="about-goal">
+              🎯 <strong>Goal:</strong> Help businesses achieve seamless deployments & infrastructure automation
+            </p>
+
+            <div class="about-quick-facts">
+              <div class="fact-item">
+                <span class="fact-icon">📍</span>
+                <div class="fact-content">
+                  <span class="fact-label">Location</span>
+                  <span class="fact-value">Gurugram, India</span>
+                </div>
+              </div>
+              <div class="fact-item">
+                <span class="fact-icon">🎓</span>
+                <div class="fact-content">
+                  <span class="fact-label">Education</span>
+                  <span class="fact-value">B.Tech CSE @ BMU</span>
+                </div>
+              </div>
+              <div class="fact-item">
+                <span class="fact-icon">💼</span>
+                <div class="fact-content">
+                  <span class="fact-label">Rate</span>
+                  <span class="fact-value">$25/hr | 30+ hrs/week</span>
+                </div>
+              </div>
+              <div class="fact-item special">
+                <span class="fact-icon">☕</span>
+                <div class="fact-content">
+                  <span class="fact-label">Daily Fuel</span>
+                  <span class="fact-value typing-stats">
+                    <span class="stat-line"><span class="stat-num" id="coffee-count">∞</span> coffee</span>
+                    <span class="stat-line"><span class="stat-num" id="commit-count">0</span> sleep</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section skills-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">💡</span>
+            SKILLS & EXPERTISE
+          </h2>
+          <span class="section-command">kubectl get skills</span>
+        </div>
+
+        <!-- CI/CD Pipeline Visualization -->
+        <div class="pipeline-visual">
+          <div class="pipeline-stage" data-stage="source">
+            <div class="stage-icon">📦</div>
+            <span class="stage-label">SOURCE</span>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-stage" data-stage="build">
+            <div class="stage-icon">🔨</div>
+            <span class="stage-label">BUILD</span>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-stage" data-stage="test">
+            <div class="stage-icon">🧪</div>
+            <span class="stage-label">TEST</span>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-stage" data-stage="deploy">
+            <div class="stage-icon">🚀</div>
+            <span class="stage-label">DEPLOY</span>
+          </div>
+          <div class="pipeline-arrow">→</div>
+          <div class="pipeline-stage" data-stage="monitor">
+            <div class="stage-icon">📊</div>
+            <span class="stage-label">MONITOR</span>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- SOURCE: Linux, Bash, Python (scripting & source management) -->
+          <div class="skill-card" data-level="expert" data-stage="source">
+            <div class="skill-icon">�</div>
+            <h3 class="skill-name">Linux</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <span class="skill-level">Expert</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="expert" data-stage="source">
+            <div class="skill-icon">�</div>
+            <h3 class="skill-name">Bash</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <span class="skill-level">Expert</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="advanced" data-stage="source test">
+            <div class="skill-icon">🐍</div>
+            <h3 class="skill-name">Python</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <!-- BUILD: Docker, Jenkins -->
+          <div class="skill-card" data-level="expert" data-stage="build">
+            <div class="skill-icon">�</div>
+            <h3 class="skill-name">Docker</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+            </div>
+            <span class="skill-level">Expert</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="advanced" data-stage="build test">
+            <div class="skill-icon">🔧</div>
+            <h3 class="skill-name">Jenkins</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <!-- TEST: CI/CD -->
+          <div class="skill-card" data-level="advanced" data-stage="test">
+            <div class="skill-icon">🔄</div>
+            <h3 class="skill-name">CI/CD</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <!-- DEPLOY: K8s, AWS, GCP, Terraform, Ansible, Nginx -->
+          <div class="skill-card" data-level="advanced" data-stage="deploy">
+            <div class="skill-icon">☸️</div>
+            <h3 class="skill-name">Kubernetes</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="advanced" data-stage="deploy">
+            <div class="skill-icon">☁️</div>
+            <h3 class="skill-name">AWS</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="advanced" data-stage="deploy">
+            <div class="skill-icon">🌩️</div>
+            <h3 class="skill-name">GCP</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <div class="skill-card" data-level="proficient" data-stage="deploy">
+            <div class="skill-icon">�️</div>
+            <h3 class="skill-name">Terraform</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Proficient</span>
+            <span class="skill-status scaling">� Scaling</span>
+          </div>
+
+          <div class="skill-card" data-level="proficient" data-stage="deploy">
+            <div class="skill-icon">📦</div>
+            <h3 class="skill-name">Ansible</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Proficient</span>
+            <span class="skill-status running">� Running</span>
+          </div>
+
+          <div class="skill-card" data-level="advanced" data-stage="deploy">
+            <div class="skill-icon">🌐</div>
+            <h3 class="skill-name">Nginx</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Advanced</span>
+            <span class="skill-status running">🟢 Running</span>
+          </div>
+
+          <!-- MONITOR: Prometheus, Grafana -->
+          <div class="skill-card" data-level="proficient" data-stage="monitor">
+            <div class="skill-icon">🔥</div>
+            <h3 class="skill-name">Prometheus</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Proficient</span>
+            <span class="skill-status scaling">🟡 Scaling</span>
+          </div>
+
+          <div class="skill-card" data-level="proficient" data-stage="monitor">
+            <div class="skill-icon">📈</div>
+            <h3 class="skill-name">Grafana</h3>
+            <div class="skill-rating">
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star filled">★</span>
+              <span class="star">★</span>
+              <span class="star">★</span>
+            </div>
+            <span class="skill-level">Proficient</span>
+            <span class="skill-status scaling">🟡 Scaling</span>
+          </div>
+        </div>
+
+        <!-- Terminal View Toggle -->
+        <div class="skills-terminal-toggle">
+          <button class="toggle-btn active" data-view="cards">Visual Cards</button>
+          <button class="toggle-btn" data-view="terminal">Terminal Output</button>
+        </div>
+
+        <div class="skills-terminal hidden" id="skills-terminal">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">kubectl get skills</span>
+          </div>
+          <div class="terminal-body">
+            <pre class="terminal-output">
+NAME          LEVEL   STATUS    EXPERIENCE
+docker        5/5     Running   3 years
+linux         5/5     Running   4 years
+git           5/5     Running   3 years
+bash          5/5     Running   4 years
+kubernetes    4/5     Running   1 year
+nginx         4/5     Running   2 years
+cicd          3/5     Running   1 year
+cloud         3/5     Running   1 year
+terraform     2/5     Scaling   Learning
+monitoring    4/5     Running   1 year
+            </pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">💼</span>
+            PROJECTS
+          </h2>
+          <span class="section-command">docker ps -a</span>
+        </div>
+
+        <!-- Featured Project Display -->
+        <div class="project-showcase" id="project-showcase">
+          <div class="project-card featured active" data-project="0">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="placeholder-icon">🖥️</span>
+                <span>ParentHost Platform</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-name">Web Hosting & Automation Platform</h3>
+                <span class="project-version">ParentHost</span>
+              </div>
+              <p class="project-description">
+                Developed and managed a hosting and automation platform offering shared hosting, VPS, proxies, and
+                licensing-based services. Integrated third-party APIs, automated service provisioning, and managed Linux
+                servers for hosting and proxy delivery. Focused on reliability, automation, and secure service
+                orchestration.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">Linux Admin</span>
+                <span class="tech-badge">API Integration</span>
+                <span class="tech-badge">Build Automation</span>
+                <span class="tech-badge">Web Hosting</span>
+                <span class="tech-badge">Provisioning</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link primary">🔗 View Project</a>
+                <a href="#" class="project-link">📂 Details</a>
+              </div>
+              <div class="project-container-info">
+                <pre>Role: DevOps & Platform Engineer | Status: 🟢 Running</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hidden project data for JS -->
+          <div class="project-card" data-project="1">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="placeholder-icon">🤖</span>
+                <span>Bot Infrastructure</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-name">Telegram Automation Bot Infrastructure</h3>
+                <span class="project-version">v2.0</span>
+              </div>
+              <p class="project-description">
+                Built and deployed an automated Telegram bot system to manage large-scale farming workflows for a crypto
+                rewards platform. Focused on backend automation, session handling, proxy management, and secure
+                execution at scale. Designed for continuous operation on Linux servers with minimal downtime and
+                automated recovery.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge">Python</span>
+                <span class="tech-badge">Automation</span>
+                <span class="tech-badge">Linux Admin</span>
+                <span class="tech-badge">Web Proxy</span>
+                <span class="tech-badge">API Integration</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link primary">🔗 View Project</a>
+                <a href="#" class="project-link">📂 GitHub</a>
+              </div>
+              <div class="project-container-info">
+                <pre>Role: Backend Automation Engineer | Status: 🟢 Running</pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card" data-project="2">
+            <div class="project-image">
+              <div class="project-placeholder">
+                <span class="placeholder-icon">🏭</span>
+                <span>Avrio IoT Platform</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <div class="project-header">
+                <h3 class="project-name">IoT Platform Deployment & DevOps Automation</h3>
+                <span class="project-version">Docker + CI/CD</span>
+              </div>
+              <p class="project-description">
+                Designed and deployed a secure, scalable IoT backend platform for smart energy management. Dockerized
+                core services (MQTT, Redis, PostgreSQL, Django), built REST APIs for device onboarding, and implemented
+                JWT-based authentication. Automated testing and deployments using CI/CD pipelines with NGINX, HTTPS, and
+                health checks.
+              </p>
+              <div class="project-tech">
+                <span class="tech-badge docker">🐳 Docker</span>
+                <span class="tech-badge">🔄 CI/CD</span>
+                <span class="tech-badge">Linux Admin</span>
+                <span class="tech-badge">API Development</span>
+                <span class="tech-badge">MQTT</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link primary">🔗 View Project</a>
+                <a href="#" class="project-link">📂 Details</a>
+              </div>
+              <div class="project-container-info">
+                <pre>Role: DevOps & Backend Engineer | Status: 🟢 Running</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Slider/Selector -->
+        <div class="project-slider">
+          <button class="slider-arrow prev" id="project-prev">‹</button>
+          <div class="slider-track" id="slider-track">
+            <div class="slider-item active" data-index="0">
+              <span class="slider-icon">🖥️</span>
+              <span class="slider-label">ParentHost</span>
+            </div>
+            <div class="slider-item" data-index="1">
+              <span class="slider-icon">🤖</span>
+              <span class="slider-label">Telegram Bot</span>
+            </div>
+            <div class="slider-item" data-index="2">
+              <span class="slider-icon">🏭</span>
+              <span class="slider-label">IoT Platform</span>
+            </div>
+          </div>
+          <button class="slider-arrow next" id="project-next">›</button>
+        </div>
+
+        <!-- Slider Dots -->
+        <div class="slider-dots">
+          <span class="dot active" data-index="0"></span>
+          <span class="dot" data-index="1"></span>
+          <span class="dot" data-index="2"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">📋</span>
+            EXPERIENCE
+          </h2>
+          <div class="view-toggle">
+            <button class="toggle-btn active" data-view="timeline">Timeline</button>
+            <button class="toggle-btn" data-view="git">Git Log</button>
+          </div>
+        </div>
+
+        <!-- Timeline View -->
+        <div class="experience-timeline" id="timeline-view">
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="year">2025</span>
+            </div>
+            <div class="timeline-content">
+              <div class="exp-header">
+                <span class="exp-icon">🏢</span>
+                <div class="exp-info">
+                  <h3 class="exp-role">DevOps & Backend Engineering Intern</h3>
+                  <span class="exp-company">Avrio Energy</span>
+                  <span class="exp-duration">June 2025 - July 2025</span>
+                </div>
+              </div>
+              <ul class="exp-highlights">
+                <li>Designed, deployed, and automated backend and IoT infrastructure for a smart energy management
+                  platform</li>
+                <li>Containerized core services using Docker, built secure REST APIs with JWT-based authentication</li>
+                <li>Implemented CI/CD pipelines for automated testing and deployments</li>
+                <li>Deployed staging environments with NGINX, HTTPS, and health checks</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-tag">Docker</span>
+                <span class="tech-tag">CI/CD</span>
+                <span class="tech-tag">NGINX</span>
+                <span class="tech-tag">REST APIs</span>
+                <span class="tech-tag">IoT</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-marker">
+              <span class="year">2023+</span>
+            </div>
+            <div class="timeline-content">
+              <div class="exp-header">
+                <span class="exp-icon">🚀</span>
+                <div class="exp-info">
+                  <h3 class="exp-role">Startup & Platform Development</h3>
+                  <span class="exp-company">Freelance / Personal Projects</span>
+                  <span class="exp-duration">Ongoing</span>
+                </div>
+              </div>
+              <ul class="exp-highlights">
+                <li>Building and managing early-stage tech platforms including hosting services and automation tools
+                </li>
+                <li>End-to-end ownership from system design to deployment, debugging, and maintenance</li>
+                <li>Active on Upwork providing DevOps consulting services</li>
+              </ul>
+              <div class="exp-tech">
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">GCP</span>
+                <span class="tech-tag">Kubernetes</span>
+                <span class="tech-tag">Terraform</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Git Log View -->
+        <div class="experience-git hidden" id="git-view">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <span class="terminal-title">git log --oneline --career</span>
+          </div>
+          <div class="terminal-body">
+            <pre class="git-log">
+<span class="git-hash">a1b2c3d</span> <span class="git-head">(HEAD)</span> DevOps & Backend Intern @ Avrio Energy <span class="git-date">(Jun-Jul 2025)</span>
+<span class="git-hash">d4e5f6g</span> Startup Platform Developer <span class="git-date">(2023-Present)</span>
+<span class="git-hash">e7f8g9h</span> B.Tech CSE @ BMU <span class="git-date">(2023-2027)</span>
+<span class="git-hash">h0i1j2k</span> Freelance DevOps @ Upwork <span class="git-date">(Active)</span>
+            </pre>
+          </div>
+        </div>
+
+        <a href="/assets/documents/SHIVANG_CV.pdf" class="resume-download" target="_blank">
+          📄 Download Full Resume
+        </a>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section education-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">🎓</span>
+            EDUCATION
+          </h2>
+          <span class="section-command">cat education.log</span>
+        </div>
+
+        <div class="education-grid">
+          <div class="education-card primary">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-content">
+              <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
+              <p class="edu-field">Computer Science</p>
+              <p class="edu-institution">BML Munjal University (BMU)</p>
+              <p class="edu-duration">2023 - 2027 (Expected)</p>
+              <div class="edu-coursework">
+                <p class="coursework-label">Key Focus Areas:</p>
+                <div class="coursework-tags">
+                  <span class="course-tag">Operating Systems</span>
+                  <span class="course-tag">Computer Networks</span>
+                  <span class="course-tag">Cloud Computing</span>
+                  <span class="course-tag">DevOps</span>
+                  <span class="course-tag">System Administration</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="education-card">
+            <div class="edu-icon">📚</div>
+            <div class="edu-content">
+              <h3 class="edu-degree">Higher Secondary (Class XII)</h3>
+              <p class="edu-institution">School Name</p>
+              <p class="edu-duration">2022</p>
+              <span class="edu-score">Score: XX%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+      <div class="section-container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="title-icon">📧</span>
+            GET IN TOUCH
+          </h2>
+          <span class="section-command">ssh contact@shivang</span>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="contact-intro">
+            <p class="contact-text">💬 Let's connect!</p>
+            <p class="contact-subtext">
+              Have a project in mind or want to chat about DevOps?
+              I'd love to hear from you!
+            </p>
+          </div>
+
+          <form class="contact-form" id="contact-form">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="John Doe">
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">
+              <span class="btn-icon">🚀</span>
+              <span class="btn-text">Deploy Message</span>
+            </button>
+            <div class="form-status hidden" id="form-status">
+              <span class="status-icon">✓</span>
+              <span class="status-text">Message deployed successfully! 🎉</span>
+            </div>
+          </form>
+
+          <div class="contact-links">
+            <a href="mailto:shivang@example.com" class="contact-link">
+              <span class="link-icon">📧</span>
+              <span>Email</span>
+            </a>
+            <a href="https://linkedin.com/in/shivang" class="contact-link" target="_blank">
+              <span class="link-icon">💼</span>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/shivang" class="contact-link" target="_blank">
+              <span class="link-icon">🐙</span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://twitter.com/shivang" class="contact-link" target="_blank">
+              <span class="link-icon">🐦</span>
+              <span>Twitter</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text">
+          Built with 💚 by Shivang Tanwar | © 2026
+        </p>
+        <p class="footer-tagline">
+          🐳 Containerized with passion | ☸️ Orchestrated with care
+        </p>
+      </div>
+    </footer>
+
+    <!-- Terminal -->
+    <div class="terminal-container" id="terminal-container">
+      <div class="terminal-toggle" id="terminal-toggle">
+        <span class="toggle-icon">⌨️</span>
+        <span class="toggle-text">Terminal</span>
+      </div>
+      <div class="terminal-panel hidden" id="terminal-panel">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="terminal-title">shivang@portfolio:~</span>
+          <button class="terminal-close" id="terminal-close">×</button>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-history" id="terminal-history"></div>
+          <div class="terminal-input-line">
+            <span class="prompt">shivang@portfolio:~$</span>
+            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
+            <span class="cursor blink">█</span>
+          </div>
+        </div>
+        <div class="terminal-hint">
+          Type 'help' for commands • Click navbar for quick navigation • Press Esc to close
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audio for typing sounds -->
+  <audio id="typing-sound" preload="auto">
+    <source src="/assets/audio/keypress.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Scripts -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

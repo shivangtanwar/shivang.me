@@ -1,0 +1,293 @@
+/* ============================================
+   TERMINAL COMPONENT STYLES
+   ============================================ */
+
+.terminal-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-terminal);
+}
+
+/* Terminal Toggle Button */
+.terminal-toggle {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--bg-terminal-header);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+}
+
+.terminal-toggle:hover {
+    background: var(--bg-tertiary);
+    color: var(--accent-cyan);
+    border-color: var(--accent-cyan);
+}
+
+.toggle-icon {
+    font-size: var(--text-lg);
+}
+
+.toggle-text {
+    font-size: var(--text-sm);
+}
+
+/* Terminal Panel */
+.terminal-panel {
+    background: var(--bg-terminal);
+    border-top: 1px solid var(--border-color);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease;
+}
+
+.terminal-panel .terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    background: var(--bg-terminal-header);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-close {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: var(--text-xl);
+    cursor: pointer;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.terminal-close:hover {
+    background: var(--accent-red);
+    color: white;
+}
+
+.terminal-panel .terminal-body {
+    padding: var(--space-lg);
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* Terminal History */
+.terminal-history {
+    margin-bottom: var(--space-md);
+}
+
+.history-line {
+    margin-bottom: var(--space-sm);
+    line-height: 1.6;
+}
+
+.history-line .prompt {
+    color: var(--accent-cyan);
+}
+
+.history-line .command {
+    color: var(--text-primary);
+    margin-left: var(--space-sm);
+}
+
+.history-line .output {
+    color: var(--text-terminal);
+    white-space: pre-wrap;
+    margin-top: var(--space-xs);
+    padding-left: var(--space-md);
+    border-left: 2px solid var(--border-color);
+}
+
+.history-line .error {
+    color: var(--accent-red);
+}
+
+/* Terminal Input */
+.terminal-input-line {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.terminal-input-line .prompt {
+    color: var(--accent-cyan);
+    white-space: nowrap;
+}
+
+.terminal-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--text-primary);
+    caret-color: var(--accent-green);
+}
+
+.terminal-input::placeholder {
+    color: var(--text-muted);
+}
+
+.terminal-input-line .cursor {
+    color: var(--accent-green);
+    animation: blink 1s infinite;
+}
+
+/* Terminal Hint */
+.terminal-hint {
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(0, 0, 0, 0.3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Command suggestions */
+.command-suggestions {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.suggestion-item {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+    transition: background var(--transition-fast);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+}
+
+.suggestion-item:hover,
+.suggestion-item.selected {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--accent-cyan);
+}
+
+.suggestion-item .command-name {
+    color: var(--accent-green);
+}
+
+.suggestion-item .command-desc {
+    color: var(--text-muted);
+    margin-left: var(--space-md);
+    font-size: var(--text-xs);
+}
+
+/* Easter Egg Animations */
+.matrix-rain {
+    position: fixed;
+    inset: 0;
+    z-index: var(--z-overlay);
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: var(--accent-green);
+    writing-mode: vertical-rl;
+    animation: matrixFall 5s linear infinite;
+}
+
+@keyframes matrixFall {
+    to {
+        top: 100%;
+    }
+}
+
+/* Cowsay */
+.cowsay-output {
+    font-family: var(--font-mono);
+    white-space: pre;
+    line-height: 1.2;
+    color: var(--text-terminal);
+}
+
+/* Confetti (for sudo hire shivang) */
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    z-index: var(--z-overlay);
+    pointer-events: none;
+    animation: confettiFall 3s ease-out forwards;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Mobile terminal */
+@media (max-width: 768px) {
+    .terminal-container {
+        display: none;
+    }
+
+    .terminal-container.visible {
+        display: block;
+    }
+
+    .terminal-toggle {
+        bottom: var(--space-lg);
+        right: var(--space-lg);
+        left: auto;
+        transform: none;
+        border-radius: var(--radius-full);
+        padding: var(--space-md);
+    }
+
+    .toggle-text {
+        display: none;
+    }
+
+    .terminal-panel {
+        position: fixed;
+        inset: 0;
+        z-index: var(--z-modal);
+        border-radius: 0;
+    }
+
+    .terminal-panel .terminal-body {
+        height: calc(100vh - 100px);
+        max-height: none;
+    }
+}
