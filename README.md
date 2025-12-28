@@ -1,8 +1,23 @@
 # Shivang Tanwar | DevOps Engineer Portfolio
 
-A modern, interactive portfolio website built with Vite, Three.js, and GSAP. Features a terminal-inspired design with DevOps-themed UI elements.
+<table>
+<tr>
+<td width="200">
+<img src="assets/images/me.jpg" width="180" alt="Shivang Tanwar" style="border-radius: 8px;">
+</td>
+<td>
 
-![Portfolio Preview](assets/images/me.jpg)
+### Hi! I'm Shivang 👋
+
+A modern, interactive portfolio website built with **Vite**, **Three.js**, and **GSAP**.
+
+Features a terminal-inspired design with DevOps-themed UI elements.
+
+🔗 **Live**: [shivang.me](https://shivang.me) &nbsp;|&nbsp; 📍 **Gurugram, India** &nbsp;|&nbsp; 💼 **Available for hire**
+
+</td>
+</tr>
+</table>
 
 ## ✨ Features
 
