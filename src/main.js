@@ -69,11 +69,119 @@ function initInteractiveElements() {
     // Project slider
     initProjectSlider();
 
+    // Image lightbox
+    initImageLightbox();
+
+    // Contact form
+    initContactForm();
+
     // Mobile menu
     initMobileMenu();
 
     // Theme toggle
     initThemeToggle();
+}
+
+/**
+ * Contact form submission handler
+ */
+function initContactForm() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const statusDiv = document.getElementById('form-status');
+
+    if (!form) return;
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Show loading state
+        const originalText = submitBtn.querySelector('.btn-text').textContent;
+        submitBtn.querySelector('.btn-text').textContent = 'Deploying...';
+        submitBtn.querySelector('.btn-icon').textContent = '⏳';
+        submitBtn.disabled = true;
+
+        const formData = new FormData(form);
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Success
+                statusDiv.className = 'form-status success';
+                statusDiv.querySelector('.status-icon').textContent = '✓';
+                statusDiv.querySelector('.status-text').textContent = 'Message deployed successfully! 🎉';
+                form.reset();
+
+                // Reset button
+                submitBtn.querySelector('.btn-text').textContent = 'Deployed!';
+                submitBtn.querySelector('.btn-icon').textContent = '✅';
+
+                setTimeout(() => {
+                    submitBtn.querySelector('.btn-text').textContent = originalText;
+                    submitBtn.querySelector('.btn-icon').textContent = '🚀';
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Error
+            statusDiv.className = 'form-status error';
+            statusDiv.querySelector('.status-icon').textContent = '✗';
+            statusDiv.querySelector('.status-text').textContent = 'Deployment failed. Please try again.';
+
+            submitBtn.querySelector('.btn-text').textContent = originalText;
+            submitBtn.querySelector('.btn-icon').textContent = '🚀';
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+/**
+ * Image lightbox for project images
+ */
+function initImageLightbox() {
+    const lightbox = document.getElementById('image-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    if (!lightbox) return;
+
+    // Click on project images to open lightbox
+    document.querySelectorAll('.project-images-stack img').forEach(img => {
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    // Close lightbox
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) closeLightbox();
+    });
+
+    // Escape key to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+            closeLightbox();
+        }
+    });
 }
 
 /**
@@ -357,6 +465,9 @@ function initProjectSlider() {
             if (e.key === 'ArrowRight') showProject(currentIndex + 1);
         }
     });
+
+    // Initialize first project on load
+    showProject(0);
 }
 
 /**
@@ -458,42 +569,6 @@ function initThemeToggle() {
                 removeFlash();
             }
         }, 10000);
-    });
-}
-
-/**
- * Initialize contact form
- */
-function initContactForm() {
-    const form = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    if (!form) return;
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        const submitBtn = form.querySelector('.submit-btn');
-        const originalText = submitBtn.innerHTML;
-
-        // Show loading state
-        submitBtn.innerHTML = '<span class="btn-icon">⏳</span><span class="btn-text">Deploying...</span>';
-        submitBtn.disabled = true;
-
-        // Simulate form submission (replace with actual API call)
-        await new Promise(resolve => setTimeout(resolve, 1500));
-
-        // Show success
-        submitBtn.innerHTML = '<span class="btn-icon">✓</span><span class="btn-text">Deployed!</span>';
-        formStatus.classList.remove('hidden');
-
-        // Reset after delay
-        setTimeout(() => {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-            formStatus.classList.add('hidden');
-            form.reset();
-        }, 3000);
     });
 }
 

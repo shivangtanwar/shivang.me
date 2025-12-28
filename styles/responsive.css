@@ -208,12 +208,51 @@
         gap: var(--space-lg);
     }
 
-    .project-card.featured {
+    .project-card.featured,
+    .project-card.active {
         grid-column: auto;
     }
 
+    /* Project showcase mobile fixes */
+    .project-showcase {
+        min-height: auto !important;
+    }
+
+    .project-showcase .project-card.active,
+    .project-showcase .project-card.featured.active {
+        display: flex !important;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
     .project-image {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .project-images-stack {
+        padding: var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .project-img-main {
+        height: 150px;
+    }
+
+    .project-img-thumb {
+        height: 80px;
+    }
+
+    .project-img-top {
+        height: 80px;
+    }
+
+    .project-img-bottom {
         min-height: 150px;
+    }
+
+    .project-img-single {
+        max-height: 250px;
     }
 
     .project-content {
@@ -226,6 +265,42 @@
 
     .project-links {
         flex-wrap: wrap;
+    }
+
+    /* Project slider mobile */
+    .project-slider {
+        gap: var(--space-sm);
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    /* Hide arrows on mobile - use indicators only */
+    .slider-arrow {
+        display: none;
+    }
+
+    .project-indicators {
+        gap: var(--space-xs);
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: 100%;
+        padding: var(--space-xs);
+    }
+
+    .project-indicator {
+        min-width: 70px;
+        max-width: 100px;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .project-indicator-icon {
+        font-size: var(--text-lg);
+    }
+
+    .project-indicator-name {
+        font-size: 9px;
     }
 
     /* Experience Mobile */

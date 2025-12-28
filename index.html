@@ -14,7 +14,7 @@
   <meta property="og:title" content="Shivang Tanwar | DevOps Engineer">
   <meta property="og:description" content="Building bridges between Dev and Ops">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://shivangtanwar.me">
+  <meta property="og:url" content="https://shivang.me">
 
   <title>Shivang Tanwar | DevOps Engineer</title>
 
@@ -76,8 +76,8 @@
     <nav id="navbar" class="navbar">
       <div class="nav-container">
         <a href="#hero" class="nav-logo">
-          <span class="logo-icon">⎈</span>
-          <span class="logo-text">SHIVANG</span>
+          <span class="logo-bracket">&lt;</span><span class="logo-text">SHIVANG</span><span
+            class="logo-bracket">/&gt;</span>
         </a>
 
         <div class="nav-links" id="nav-links">
@@ -113,7 +113,7 @@
 
         <div class="nav-actions">
           <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <span class="theme-icon">☾</span>
+            <span class="theme-icon">🌛</span>
           </button>
           <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle menu">
             <span class="hamburger"></span>
@@ -236,7 +236,8 @@
               automation across AWS, GCP, and Azure.
             </p>
             <p class="about-goal">
-              🎯 <strong>Goal:</strong> Help businesses achieve seamless deployments & infrastructure automation
+              🔧 <strong>Focus:</strong> Building scalable infrastructure, automating deployments & ensuring system
+              reliability
             </p>
 
             <div class="about-quick-facts">
@@ -320,7 +321,7 @@
         <div class="skills-grid" id="skills-grid">
           <!-- SOURCE: Linux, Bash, Python (scripting & source management) -->
           <div class="skill-card" data-level="expert" data-stage="source">
-            <div class="skill-icon">�</div>
+            <div class="skill-icon">🐧</div>
             <h3 class="skill-name">Linux</h3>
             <div class="skill-rating">
               <span class="star filled">★</span>
@@ -334,7 +335,7 @@
           </div>
 
           <div class="skill-card" data-level="expert" data-stage="source">
-            <div class="skill-icon">�</div>
+            <div class="skill-icon">💻</div>
             <h3 class="skill-name">Bash</h3>
             <div class="skill-rating">
               <span class="star filled">★</span>
@@ -363,7 +364,7 @@
 
           <!-- BUILD: Docker, Jenkins -->
           <div class="skill-card" data-level="expert" data-stage="build">
-            <div class="skill-icon">�</div>
+            <div class="skill-icon">🐳</div>
             <h3 class="skill-name">Docker</h3>
             <div class="skill-rating">
               <span class="star filled">★</span>
@@ -449,7 +450,7 @@
           </div>
 
           <div class="skill-card" data-level="proficient" data-stage="deploy">
-            <div class="skill-icon">�️</div>
+            <div class="skill-icon">🏗️</div>
             <h3 class="skill-name">Terraform</h3>
             <div class="skill-rating">
               <span class="star filled">★</span>
@@ -459,7 +460,7 @@
               <span class="star">★</span>
             </div>
             <span class="skill-level">Proficient</span>
-            <span class="skill-status scaling">� Scaling</span>
+            <span class="skill-status scaling">🟠 Scaling</span>
           </div>
 
           <div class="skill-card" data-level="proficient" data-stage="deploy">
@@ -473,7 +474,7 @@
               <span class="star">★</span>
             </div>
             <span class="skill-level">Proficient</span>
-            <span class="skill-status running">� Running</span>
+            <span class="skill-status running">🟢 Running</span>
           </div>
 
           <div class="skill-card" data-level="advanced" data-stage="deploy">
@@ -569,9 +570,13 @@ monitoring    4/5     Running   1 year
         <div class="project-showcase" id="project-showcase">
           <div class="project-card featured active" data-project="0">
             <div class="project-image">
-              <div class="project-placeholder">
-                <span class="placeholder-icon">🖥️</span>
-                <span>ParentHost Platform</span>
+              <div class="project-images-stack">
+                <img src="/assets/images/parenthost-dashboard.png" alt="ParentHost VPS Dashboard"
+                  class="project-img-main">
+                <div class="project-img-row">
+                  <img src="/assets/images/parenthost-vps.png" alt="VPS Pricing Plans" class="project-img-thumb">
+                  <img src="/assets/images/parenthost-proxy.png" alt="Proxy Services" class="project-img-thumb">
+                </div>
               </div>
             </div>
             <div class="project-content">
@@ -605,9 +610,8 @@ monitoring    4/5     Running   1 year
           <!-- Hidden project data for JS -->
           <div class="project-card" data-project="1">
             <div class="project-image">
-              <div class="project-placeholder">
-                <span class="placeholder-icon">🤖</span>
-                <span>Bot Infrastructure</span>
+              <div class="project-images-stack">
+                <img src="/assets/images/telegram-bot.png" alt="PARENTHOST Telegram Bot" class="project-img-single">
               </div>
             </div>
             <div class="project-content">
@@ -640,9 +644,9 @@ monitoring    4/5     Running   1 year
 
           <div class="project-card" data-project="2">
             <div class="project-image">
-              <div class="project-placeholder">
-                <span class="placeholder-icon">🏭</span>
-                <span>Avrio IoT Platform</span>
+              <div class="project-images-stack">
+                <img src="/assets/images/iot-docker.png" alt="Docker containers running" class="project-img-top">
+                <img src="/assets/images/iot-admin.png" alt="Avrio IoT Admin Dashboard" class="project-img-bottom">
               </div>
             </div>
             <div class="project-content">
@@ -823,6 +827,7 @@ monitoring    4/5     Running   1 year
               <p class="edu-field">Computer Science</p>
               <p class="edu-institution">BML Munjal University (BMU)</p>
               <p class="edu-duration">2023 - 2027 (Expected)</p>
+              <span class="edu-score">CGPA: 7.2/10</span>
               <div class="edu-coursework">
                 <p class="coursework-label">Key Focus Areas:</p>
                 <div class="coursework-tags">
@@ -840,9 +845,9 @@ monitoring    4/5     Running   1 year
             <div class="edu-icon">📚</div>
             <div class="edu-content">
               <h3 class="edu-degree">Higher Secondary (Class XII)</h3>
-              <p class="edu-institution">School Name</p>
-              <p class="edu-duration">2022</p>
-              <span class="edu-score">Score: XX%</span>
+              <p class="edu-institution">Happy Evergreen Senior Secondary School</p>
+              <p class="edu-duration">2021 - 2022</p>
+              <span class="edu-score">Score: 86%</span>
             </div>
           </div>
         </div>
@@ -869,7 +874,11 @@ monitoring    4/5     Running   1 year
             </p>
           </div>
 
-          <form class="contact-form" id="contact-form">
+          <form class="contact-form" id="contact-form" action="https://formspree.io/f/mqekdlgp" method="POST">
+            <!-- Honeypot for spam protection -->
+            <input type="text" name="_gotcha" style="display:none">
+            <input type="hidden" name="_subject" value="New Portfolio Contact">
+
             <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -882,30 +891,30 @@ monitoring    4/5     Running   1 year
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" required placeholder="Your message..."></textarea>
             </div>
-            <button type="submit" class="submit-btn">
+            <button type="submit" class="submit-btn" id="submit-btn">
               <span class="btn-icon">🚀</span>
               <span class="btn-text">Deploy Message</span>
             </button>
-            <div class="form-status hidden" id="form-status">
-              <span class="status-icon">✓</span>
-              <span class="status-text">Message deployed successfully! 🎉</span>
+            <div class="form-status" id="form-status">
+              <span class="status-icon"></span>
+              <span class="status-text"></span>
             </div>
           </form>
 
           <div class="contact-links">
-            <a href="mailto:shivang@example.com" class="contact-link">
+            <a href="mailto:contact@shivang.me" class="contact-link">
               <span class="link-icon">📧</span>
               <span>Email</span>
             </a>
-            <a href="https://linkedin.com/in/shivang" class="contact-link" target="_blank">
+            <a href="https://linkedin.com/in/shivangtanwar" class="contact-link" target="_blank">
               <span class="link-icon">💼</span>
               <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/shivang" class="contact-link" target="_blank">
+            <a href="https://github.com/shivangtanwar" class="contact-link" target="_blank">
               <span class="link-icon">🐙</span>
               <span>GitHub</span>
             </a>
-            <a href="https://twitter.com/shivang" class="contact-link" target="_blank">
+            <a href="https://twitter.com/shivangtanwar" class="contact-link" target="_blank">
               <span class="link-icon">🐦</span>
               <span>Twitter</span>
             </a>
@@ -946,8 +955,8 @@ monitoring    4/5     Running   1 year
           <div class="terminal-history" id="terminal-history"></div>
           <div class="terminal-input-line">
             <span class="prompt">shivang@portfolio:~$</span>
-            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false">
-            <span class="cursor blink">█</span>
+            <input type="text" class="terminal-input" id="terminal-input" autocomplete="off" spellcheck="false"
+              placeholder="">
           </div>
         </div>
         <div class="terminal-hint">
@@ -961,6 +970,12 @@ monitoring    4/5     Running   1 year
   <audio id="typing-sound" preload="auto">
     <source src="/assets/audio/keypress.mp3" type="audio/mpeg">
   </audio>
+
+  <!-- Image Lightbox -->
+  <div class="image-lightbox" id="image-lightbox">
+    <button class="lightbox-close" id="lightbox-close">×</button>
+    <img src="" alt="Expanded view" id="lightbox-img">
+  </div>
 
   <!-- Scripts -->
   <script type="module" src="/src/main.js"></script>

@@ -173,8 +173,8 @@ function initHoverEffects() {
         });
     });
 
-    // Tilt effect on cards (subtle)
-    document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+    // Tilt effect on skill cards only (very subtle)
+    document.querySelectorAll('.skill-card').forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -183,13 +183,13 @@ function initHoverEffects() {
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
 
-            // Reduced tilt effect - divide by 30 instead of 10, clamp to max 4 degrees
-            let rotateX = (y - centerY) / 30;
-            let rotateY = (centerX - x) / 30;
+            // Very subtle tilt - max 2 degrees
+            let rotateX = (y - centerY) / 50;
+            let rotateY = (centerX - x) / 50;
 
-            // Clamp rotation to max ±4 degrees
-            rotateX = Math.max(-4, Math.min(4, rotateX));
-            rotateY = Math.max(-4, Math.min(4, rotateY));
+            // Clamp rotation to max ±2 degrees
+            rotateX = Math.max(-2, Math.min(2, rotateX));
+            rotateY = Math.max(-2, Math.min(2, rotateY));
 
             gsap.to(card, {
                 rotateX: rotateX,
@@ -204,7 +204,8 @@ function initHoverEffects() {
             gsap.to(card, {
                 rotateX: 0,
                 rotateY: 0,
-                duration: 0.5,
+                clearProps: 'transform',
+                duration: 0.4,
                 ease: 'power2.out'
             });
         });

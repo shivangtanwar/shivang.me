@@ -9,7 +9,7 @@
         "github": "https://github.com/shivang",
         "linkedin": "https://linkedin.com/in/shivang",
         "twitter": "https://twitter.com/shivang",
-        "website": "https://shivangtanwar.me"
+        "website": "https://shivang.me"
     },
     "about": {
         "intro": "A passionate DevOps engineer who loves automating everything and building reliable, scalable infrastructure.",
@@ -205,9 +205,9 @@
         },
         {
             "degree": "Higher Secondary (Class XII)",
-            "institution": "School Name",
-            "duration": "2022",
-            "score": "XX%",
+            "institution": "Happy Evergreen Senior Secondary School",
+            "duration": "2021 - 2022",
+            "score": "86%",
             "primary": false
         }
     ]

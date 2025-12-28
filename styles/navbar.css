@@ -33,22 +33,23 @@
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 0;
     font-family: var(--font-mono);
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
     font-weight: 700;
     color: var(--text-primary);
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .nav-logo:hover {
     color: var(--accent-cyan);
+    transform: scale(1.02);
 }
 
-.logo-icon {
-    font-size: var(--text-xl);
-    animation: rotate 10s linear infinite;
+.logo-bracket {
+    color: var(--accent-purple);
+    font-weight: 400;
 }
 
 .logo-text {
@@ -56,6 +57,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    letter-spacing: 2px;
 }
 
 /* Nav Links */
@@ -115,25 +117,28 @@
 
 /* Theme Toggle */
 .theme-toggle {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    border: 2px solid var(--accent-cyan);
     border-radius: var(--radius-md);
     cursor: pointer;
     transition: all var(--transition-fast);
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
 }
 
 .theme-toggle:hover {
-    border-color: var(--accent-cyan);
-    background: rgba(0, 212, 255, 0.1);
+    border-color: var(--accent-purple);
+    background: rgba(168, 85, 247, 0.2);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    transform: scale(1.05);
 }
 
 .theme-icon {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
 }
 
 /* Mobile Menu Button */

@@ -37,6 +37,11 @@
     border-color: var(--accent-cyan);
 }
 
+/* Hide toggle when terminal is open */
+.terminal-container:has(.terminal-panel:not(.hidden)) .terminal-toggle {
+    display: none;
+}
+
 .toggle-icon {
     font-size: var(--text-lg);
 }
@@ -150,6 +155,8 @@
 .terminal-input-line .cursor {
     color: var(--accent-green);
     animation: blink 1s infinite;
+    margin-left: -2px;
+    position: relative;
 }
 
 /* Terminal Hint */
@@ -259,10 +266,6 @@
 /* Mobile terminal */
 @media (max-width: 768px) {
     .terminal-container {
-        display: none;
-    }
-
-    .terminal-container.visible {
         display: block;
     }
 

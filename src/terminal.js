@@ -96,12 +96,16 @@ export function initTerminal() {
         terminalPanel.classList.toggle('hidden');
         if (!terminalPanel.classList.contains('hidden')) {
             terminalInput?.focus();
+            terminalToggle.style.display = 'none'; // Hide toggle when open
+        } else {
+            terminalToggle.style.display = 'flex'; // Show toggle when closed
         }
     });
 
     // Close terminal
     terminalClose?.addEventListener('click', () => {
         terminalPanel.classList.add('hidden');
+        terminalToggle.style.display = 'flex'; // Show toggle when closed
     });
 
     // Handle input
@@ -121,6 +125,9 @@ export function initTerminal() {
                 terminalPanel.classList.toggle('hidden');
                 if (!terminalPanel.classList.contains('hidden')) {
                     terminalInput?.focus();
+                    terminalToggle.style.display = 'none';
+                } else {
+                    terminalToggle.style.display = 'flex';
                 }
             }
         }
@@ -128,6 +135,7 @@ export function initTerminal() {
         // Escape to close
         if (e.key === 'Escape') {
             terminalPanel?.classList.add('hidden');
+            terminalToggle.style.display = 'flex';
         }
     });
 
@@ -343,7 +351,7 @@ function showNeofetch() {
        .---.        shivang@portfolio
       /     \\       ─────────────────
       \\.@-@./       OS: Linux (DevOps Mode)
-      /\`\\_/\`\\       Host: shivangtanwar.me
+      /\`\\_/\`\\       Host: shivang.me
      //  _  \\\\      Kernel: Node.js v20
     | \\     )|_     Uptime: Since 2022
    /\`\\_\`>  <_/ \\    Shell: bash/zsh
