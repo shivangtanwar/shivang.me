@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 180 180">
+  <rect width="180" height="180" fill="#0f172a"/>
+  
+  <!-- Subtle gradient glow -->
+  <circle cx="90" cy="90" r="80" fill="none" stroke="#a855f7" stroke-width="2" stroke-opacity="0.3"/>
+  
+  <text x="90" y="100" font-family="monospace" font-weight="bold" font-size="64" fill="#a855f7" text-anchor="middle" dominant-baseline="middle">&lt;S/&gt;</text>
+</svg>

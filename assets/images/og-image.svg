@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#g)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  
+  <!-- Decorative Bracket -->
+  <text x="100" y="315" font-family="monospace" font-size="400" fill="#a855f7" opacity="0.05" dominant-baseline="middle" text-anchor="middle">{</text>
+  <text x="1100" y="315" font-family="monospace" font-size="400" fill="#a855f7" opacity="0.05" dominant-baseline="middle" text-anchor="middle">}</text>
+
+  <!-- Main Content -->
+  <text x="600" y="280" font-family="'JetBrains Mono', monospace" font-weight="bold" font-size="96" fill="#ffffff" text-anchor="middle" letter-spacing="4">SHIVANG</text>
+  
+  <rect x="400" y="320" width="400" height="4" fill="#a855f7" rx="2"/>
+  
+  <text x="600" y="380" font-family="sans-serif" font-weight="500" font-size="32" fill="#94a3b8" text-anchor="middle" letter-spacing="1">DEVOPS ENGINEER | CLOUD ARCHITECT</text>
+  
+  <!-- DevOps Icons (Simplified text for SVG portability) -->
+  <text x="600" y="550" font-family="monospace" font-size="24" fill="#00d4ff" text-anchor="middle" opacity="0.8">./aws  ./k8s  ./terraform  ./ci-cd</text>
+</svg>
